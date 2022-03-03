@@ -14,7 +14,7 @@ model = dict(
     cls_head=dict(
         type='I3DHead',
         in_channels=2048,
-        num_classes=400,
+        num_classes=99, #400 initially, 99 for finegym
         spatial_type='avg',
         dropout_ratio=0.5),
     # model training and testing settings
