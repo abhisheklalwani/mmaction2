@@ -71,6 +71,7 @@ The master branch works with **PyTorch 1.3+**.
 
 ## Updates
 
+- (2022-03-04) We support **Multigrid** on Kinetics400, achieve 76.07% Top-1 accuracy and accelerate training speed.
 - (2021-11-24) We support **2s-AGCN** on NTU60 XSub, achieve 86.06% Top-1 accuracy on joint stream and 86.89% Top-1 accuracy on bone stream respectively.
 - (2021-10-29) We provide a demo for skeleton-based and rgb-based spatio-temporal detection and action recognition (demo/demo_video_structuralize.py).
 - (2021-10-26) We train and test **ST-GCN** on NTU60 with 3D keypoint annotations, achieve 84.61% Top-1 accuracy (higher than 81.5% in the [paper](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPaper/17135)).
@@ -78,11 +79,25 @@ The master branch works with **PyTorch 1.3+**.
 - (2021-10-25) We provide a [guide](https://github.com/open-mmlab/mmaction2/blob/master/configs/skeleton/posec3d/custom_dataset_training.md) on how to train PoseC3D with custom datasets, [bit-scientist](https://github.com/bit-scientist) authored this PR!
 - (2021-10-16) We support **PoseC3D** on UCF101 and HMDB51, achieves 87.0% and 69.3% Top-1 accuracy with 2D skeletons only. Pre-extracted 2D skeletons are also available.
 
-**Release**: v0.21.0 was released in 31/12/2021. Please refer to [changelog.md](docs/changelog.md) for details and release history.
+**Release**: v0.23.0 was released in 01/04/2022. Please refer to [changelog.md](docs/changelog.md) for details and release history.
 
 ## Installation
 
-Please refer to [install.md](docs/install.md) for installation.
+MMAction2 depends on [PyTorch](https://pytorch.org/)], [MMCV](https://github.com/open-mmlab/mmcv), [MMDetection](https://github.com/open-mmlab/mmdetection) (optional), and [MMPose](https://github.com/open-mmlab/mmdetection)(optional).
+Below are quick steps for installation.
+Please refer to [install.md](docs/install.md) for more detailed instruction.
+
+```shell
+conda create -n open-mmlab python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision -c pytorch -y
+conda activate open-mmlab
+pip3 install openmim
+mim install mmcv-full
+mim install mmdet  # optional
+mim install mmpose  # optional
+git clone https://github.com/open-mmlab/mmaction2.git
+cd mmaction2
+pip3 install -e .
+```
 
 ## Get Started
 
